@@ -13,9 +13,6 @@ public class LoginController {
     @FXML
     private TextField txtPassword;
 
-    Student[] students = new Student[10];
-    int index = 0;
-
     @FXML
     void login(ActionEvent event) {
         String email = txtEmail.getText();
@@ -27,8 +24,6 @@ public class LoginController {
             System.out.println("Login Failed !");
         }
 
-        Student std = new Student(email,34,password,56.8);
-        students[index] = std;
-        index++;
+        System.out.println("End");
     }
 }
