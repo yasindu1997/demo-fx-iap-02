@@ -63,4 +63,8 @@ public class CalculatorController {
     public void getAnswers(){
 
     }
+
+    public void getSum(){
+        System.out.println("Some is not found");
+    }
 }
