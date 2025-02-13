@@ -26,9 +26,5 @@ public class LoginController {
         }else{
             System.out.println("Login Failed !");
         }
-
-        Student std = new Student(email,34,password,56.8);
-        students[index] = std;
-        index++;
     }
 }
