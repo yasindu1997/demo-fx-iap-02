@@ -13,9 +13,6 @@ public class LoginController {
     @FXML
     private TextField txtPassword;
 
-    Student[] students = new Student[10];
-    int index = 0;
-
     @FXML
     void login(ActionEvent event) {
         String email = txtEmail.getText();
