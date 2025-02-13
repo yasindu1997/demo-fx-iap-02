@@ -60,4 +60,7 @@ public class CalculatorController {
         operation="sub";
     }
 
+    public void getAnswers(){
+
+    }
 }
