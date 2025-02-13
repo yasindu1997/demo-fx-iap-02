@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="544.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.acpt.demofx.CalculatorController">
+   <children>
+      <Label layoutX="177.0" layoutY="33.0" text="Calculator" textFill="#e40f0f">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNum1" layoutX="107.0" layoutY="135.0" prefHeight="30.0" prefWidth="237.0" promptText="Enter Number 1" />
+      <TextField fx:id="txtNum2" layoutX="107.0" layoutY="191.0" prefHeight="30.0" prefWidth="237.0" promptText="Enter Number 2" />
+      <Button layoutX="199.0" layoutY="248.0" mnemonicParsing="false" onAction="#addition" prefHeight="54.0" prefWidth="59.0" text="+">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="281.0" layoutY="314.0" mnemonicParsing="false" onAction="#multiplication" prefHeight="54.0" prefWidth="59.0" text="x">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="199.0" layoutY="380.0" mnemonicParsing="false" onAction="#substraction" prefHeight="54.0" prefWidth="59.0" text="-">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="199.0" layoutY="314.0" mnemonicParsing="false" onAction="#getAnswer" prefHeight="54.0" prefWidth="59.0" text="=">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Button layoutX="123.0" layoutY="315.0" mnemonicParsing="false" onAction="#devide" prefHeight="54.0" prefWidth="59.0" text="/">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Button>
+      <Label layoutX="109.0" layoutY="483.0" text="Answer - ">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAnswer" layoutX="215.0" layoutY="483.0" prefHeight="17.0" prefWidth="102.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
