@@ -16,6 +16,7 @@ import lk.acpt.demofx.model.VehicleModel;
 import lk.acpt.demofx.tm.OrderTM;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -80,7 +81,18 @@ public class OrderController implements Initializable {
 
         OrderDto orderDto = new OrderDto(subTotal,curDate,orderTMS);
 
-        OrderModel.placeOrder(orderDto);
+        try {
+            boolean b = OrderModel.placeOrder(orderDto);
+            if(b){
+                System.out.println("Order Placed !");
+            }else{
+                System.out.println("Order Failed !");
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
