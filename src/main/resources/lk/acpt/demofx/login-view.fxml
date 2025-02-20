@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.acpt.demofx.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.acpt.demofx.controller.LoginController">
    <children>
       <TextField fx:id="txtEmail" layoutX="96.0" layoutY="131.0" prefHeight="35.0" prefWidth="409.0" promptText="Enter Email" />
       <TextField fx:id="txtPassword" layoutX="96.0" layoutY="193.0" prefHeight="35.0" prefWidth="409.0" promptText="Enter Password" />

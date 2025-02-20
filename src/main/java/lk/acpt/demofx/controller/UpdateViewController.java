@@ -1,21 +1,23 @@
-package lk.acpt.demofx;/*Auther : Yasindu Sathsara
+package lk.acpt.demofx.controller;/*Auther : Yasindu Sathsara
 Place : ACPT's Lab*/
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import lk.acpt.demofx.dto.VehicleDto;
+import lk.acpt.demofx.model.VehicleModel;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 
-public class SaveVehicleViewController {
+public class UpdateViewController {
     @FXML
     private TextField txtBrand;
 
     @FXML
     private TextField txtGears;
+
+    @FXML
+    private TextField txtId;
 
     @FXML
     private TextField txtModel;
@@ -25,11 +27,23 @@ public class SaveVehicleViewController {
 
     @FXML
     void cancle(ActionEvent event) {
-        System.exit(0);
+
     }
 
     @FXML
-    void save(ActionEvent event) {
+    void search(ActionEvent event) {
+        int id = Integer.parseInt(txtId.getText());
+
+        VehicleDto vehicleDto = VehicleModel.searchVehicle(id);
+        txtBrand.setText(vehicleDto.getBrand());
+        txtModel.setText(vehicleDto.getModel());
+        txtGears.setText(String.valueOf(vehicleDto.getNoOfGears()));
+        txtPrice.setText(String.valueOf(vehicleDto.getPrice()));
+    }
+
+    @FXML
+    void update(ActionEvent event) {
+        int id = Integer.parseInt(txtId.getText());
         String brand = txtBrand.getText();
         String model = txtModel.getText();
         int gears = Integer.parseInt(txtGears.getText());
@@ -43,17 +57,18 @@ public class SaveVehicleViewController {
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/iap_2", "root", "acpt");
 
             //dynamic query
-            PreparedStatement preparedStatement = connection.prepareStatement("insert into vehicles(brand, model, no_of_gerars, price) values(?,?,?,?)");
+            PreparedStatement preparedStatement = connection.prepareStatement("update vehicles set brand=?, model=?, no_of_gerars=?, price=? where id=?");
             preparedStatement.setObject(1, brand);
             preparedStatement.setObject(2, model);
             preparedStatement.setObject(3, gears);
             preparedStatement.setObject(4, price);
+            preparedStatement.setObject(5, id);
 
             //execute query
             int i = preparedStatement.executeUpdate();
 
             if (i > 0) {
-                System.out.println("Data Added Successfully !");
+                System.out.println("Data Updated Successfully !");
             } else {
                 System.out.println("Failed !");
             }

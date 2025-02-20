@@ -1,4 +1,4 @@
-package lk.acpt.demofx;/*Auther : Yasindu Sathsara
+package lk.acpt.demofx.controller;/*Auther : Yasindu Sathsara
 Place : ACPT's Lab*/
 
 import javafx.collections.FXCollections;
@@ -7,18 +7,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import lk.acpt.demofx.tm.VehicleTM;
 
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class LoadViewController implements Initializable {
     @FXML
-    private TableView<Vehicle> tblVehicles;
+    private TableView<VehicleTM> tblVehicles;
 
-    public ArrayList<Vehicle> loadData() {
+    public ArrayList<VehicleTM> loadData() {
         try {
             //load the installed driver to this class
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -32,18 +32,18 @@ public class LoadViewController implements Initializable {
             //execute query
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            ArrayList<Vehicle> list = new ArrayList();
+            ArrayList<VehicleTM> list = new ArrayList();
 
             while (resultSet.next()) {
-                Vehicle vehicle = new Vehicle();
+                VehicleTM vehicleTM = new VehicleTM();
 
-                vehicle.setId(resultSet.getInt(1));
-                vehicle.setBrand(resultSet.getString(2));
-                vehicle.setModel(resultSet.getString(3));
-                vehicle.setNoOfGears(resultSet.getInt(4));
-                vehicle.setPrice(resultSet.getDouble(5));
+                vehicleTM.setId(resultSet.getInt(1));
+                vehicleTM.setBrand(resultSet.getString(2));
+                vehicleTM.setModel(resultSet.getString(3));
+                vehicleTM.setNoOfGears(resultSet.getInt(4));
+                vehicleTM.setPrice(resultSet.getDouble(5));
 
-                list.add(vehicle);
+                list.add(vehicleTM);
             }
             return list;
         } catch (ClassNotFoundException | SQLException e) {
@@ -61,7 +61,7 @@ public class LoadViewController implements Initializable {
         tblVehicles.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("noOfGears"));
         tblVehicles.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        ArrayList<Vehicle> vehicles = loadData();
+        ArrayList<VehicleTM> vehicles = loadData();
         tblVehicles.setItems(FXCollections.observableArrayList(vehicles));
     }
 
@@ -74,7 +74,7 @@ public class LoadViewController implements Initializable {
         tblVehicles.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("noOfGears"));
         tblVehicles.getColumns().get(4).setCellValueFactory(new PropertyValueFactory<>("price"));
 
-        ArrayList<Vehicle> vehicles = loadData();
-        tblVehicles.setItems(FXCollections.observableArrayList(vehicles));
+        ArrayList<VehicleTM> vehicleTMS = loadData();
+        tblVehicles.setItems(FXCollections.observableArrayList(vehicleTMS));
     }
 }

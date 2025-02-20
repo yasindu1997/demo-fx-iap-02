@@ -1,12 +1,33 @@
-package lk.acpt.demofx;/*Auther : Yasindu Sathsara
+package lk.acpt.demofx.dto;/*Auther : Yasindu Sathsara
 Place : ACPT's Lab*/
 
-public class Vehicle {
+public class VehicleDto {
     private int id;
     private String brand;
     private String model;
     private int noOfGears;
     private double price;
+    private int qty;
+
+    public VehicleDto() {
+    }
+
+    public VehicleDto(String brand, String model, int noOfGears, double price, int qty) {
+        this.brand = brand;
+        this.model = model;
+        this.noOfGears = noOfGears;
+        this.price = price;
+        this.qty = qty;
+    }
+
+    public VehicleDto(int id, String brand, String model, int noOfGears, double price, int qty) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.noOfGears = noOfGears;
+        this.price = price;
+        this.qty = qty;
+    }
 
     public int getId() {
         return id;
@@ -46,5 +67,13 @@ public class Vehicle {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
     }
 }

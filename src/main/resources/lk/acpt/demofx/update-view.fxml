@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="464.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.acpt.demofx.UpdateViewController">
+<AnchorPane prefHeight="464.0" prefWidth="659.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.acpt.demofx.controller.UpdateViewController">
    <children>
       <Label layoutX="237.0" layoutY="33.0" text="Update Form" textFill="#e90000">
          <font>

@@ -1,4 +1,4 @@
-package lk.acpt.demofx;/*Auther : Yasindu Sathsara
+package lk.acpt.demofx.controller;/*Auther : Yasindu Sathsara
 Place : ACPT's Lab*/
 
 import javafx.event.ActionEvent;

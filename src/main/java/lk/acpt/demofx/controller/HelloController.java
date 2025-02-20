@@ -1,4 +1,4 @@
-package lk.acpt.demofx;
+package lk.acpt.demofx.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="483.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.acpt.demofx.LoadViewController">
+<AnchorPane prefHeight="483.0" prefWidth="710.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.acpt.demofx.controller.LoadViewController">
    <children>
       <Label layoutX="259.0" layoutY="30.0" text="Load All View" textFill="#e80303">
          <font>
